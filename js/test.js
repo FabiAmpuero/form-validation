@@ -30,14 +30,19 @@ function menuIcon(_evt) {
   //$(".menu-show").toggle(); // errores
   //console.log($(".menu-show").css("display"));
   if(x == false){
-    $(".menu-show").show();
+    $(".menu-show").show(1000);
     $(".nav-icon").addClass("change");
     $(".back-page").css("background","rgba(0,0,0, 0.75)");
+    $(".back-page").css("zIndex","2");
+    $(".back-page").css("transition",".5s");
+    $("body").css("overflow-y","hidden");
     x= true;
   }else{
-    $(".menu-show").hide();
+    $(".menu-show").hide(1000);
     $(".nav-icon").removeClass("change");
     $(".back-page").css("background","rgba(0,0,0, 0)");
+    $(".back-page").css("zIndex","-5");
+    $("body").css("overflow-y","initial");
     x= false;
   }
 }
@@ -49,9 +54,11 @@ $("#reporte").click(hideMenu);
 function hideMenu() {
   if($(".menu-show").css("display") == "block"){
     //console.log($(".menu-show").css("display"));
-    $(".menu-show").hide();
+    $(".menu-show").hide(1000);
     $(".nav-icon").removeClass("change");
     $(".back-page").css("background","rgba(0,0,0, 0)");
+    $(".back-page").css("zIndex","-5");
+    $("body").css("overflow-y","initial");
     x= false;
   } else {
     //console.log($(".menu-show").css("display"));
