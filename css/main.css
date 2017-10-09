@@ -5,9 +5,9 @@ body {
   background: #efefef;
   height: 100vh;
 }
-.container-page {
+/*.container-page {
   height: 100vh;
-}
+}*/
 .form-signin {
   padding-top: 25px;
 }
@@ -69,8 +69,30 @@ body {
   display: block;
 }
 
-[type="radio"]:not(:checked), [type="radio"]:checked {
-    position: relative;
-    opacity: 1;
-    pointer-events:auto;
+.menu-show {
+  height: 100vh;
+  width: 200px;
+  z-index: 1000;
+  display: inline-block;
+  position: absolute;
+  /*position: fixed; debemos poner este*/
+  background: #ccc;
+  overflow-y: scroll;
+  transition: .5s;
+}
+.container-page {
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.back-page {
+  z-index: 500;
+  height: 100%;
+  width: 100%;
+  /*position: fixed;*/
+  position: absolute;
+  transition: .5s;
+  margin: 0;
+  padding: 0;
 }

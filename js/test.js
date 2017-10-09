@@ -28,29 +28,35 @@ function menuIcon(_evt) {
   //_evt.toggleClass("change"); // is not a function ¿???
   //$(".nav-icon").toggleClass("change");
   //$(".menu-show").toggle(); // errores
-  console.log($(".menu-show").css("display"));
+  //console.log($(".menu-show").css("display"));
   if(x == false){
     $(".menu-show").show();
     $(".nav-icon").addClass("change");
+    $(".back-page").css("background","rgba(0,0,0, 0.75)");
     x= true;
   }else{
     $(".menu-show").hide();
     $(".nav-icon").removeClass("change");
+    $(".back-page").css("background","rgba(0,0,0, 0)");
     x= false;
   }
 }
 
-$(".container-page").click(function(){
+$(".back-page").click(hideMenu);
+$("#formulario").click(hideMenu);
+$("#reporte").click(hideMenu);
+
+function hideMenu() {
   if($(".menu-show").css("display") == "block"){
     //console.log($(".menu-show").css("display"));
     $(".menu-show").hide();
     $(".nav-icon").removeClass("change");
+    $(".back-page").css("background","rgba(0,0,0, 0)");
     x= false;
   } else {
     //console.log($(".menu-show").css("display"));
   }
-});
-
+}
 
 var validar = {
   mayuscula : function(_value){
